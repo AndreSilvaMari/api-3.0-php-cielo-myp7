@@ -7,7 +7,7 @@
   "name": "sormach/api-3.0-php-myp7",
   "description": "Integração com a API 3.0 da Cielo, e classes anti-fraud",
   "license": "MIT",
-  "type": "library",
+  "type": "vcs",
   "require": {
     "php": ">=5.6"
   },
