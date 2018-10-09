@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-0": {
+      "Cielo": "src"
+    }
+  },
+  "name": "Sormach/api-3.0-php-myp7",
+  "description": "Integração com a API 3.0 da Cielo, e classes anti-fraud",
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": ">=5.6"
+  },
+  "homepage": "https://github.com/Sormach/API-3.0-php-Cielo-Myp7"
+}
