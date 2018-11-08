@@ -1122,6 +1122,8 @@ class Payment implements \JsonSerializable
     {
         $fraud = new FraudAnalysis();
 
+        $this->fraudAnalysis = $fraud;
+
         return $fraud;
     }
 }
