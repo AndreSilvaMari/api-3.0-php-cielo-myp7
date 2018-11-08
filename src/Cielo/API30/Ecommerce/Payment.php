@@ -1111,4 +1111,17 @@ class Payment implements \JsonSerializable
 
         return $this;
     }
+
+    /**
+     * @param $sequence Hardcode
+     * @param $sequenceCriteria Hardcode
+     *
+     * @return FraudAnalysis
+     */
+    public function fraudAnalysis()
+    {
+        $fraud = new FraudAnalysis();
+
+        return $fraud;
+    }
 }
