@@ -27,9 +27,8 @@ class FraudAnalysis implements \JsonSerializable
 
     public function __construct()
     {
-//        $this->setSequence($sequence);
-//        $this->setSequenceCriteria($sequenceCriteria);
-//        $this->setFingerPrintId($fingerPrintId);
+        $this->setSequence('AuthorizeFirst');
+        $this->setSequenceCriteria('OnSuccess');
     }
 
     public function populate(\stdClass $data)
