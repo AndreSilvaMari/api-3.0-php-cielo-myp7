@@ -18,13 +18,14 @@ class Browser implements \JsonSerializable
 
     private $type;
 
-    public function __construct()
+    public function __construct($browseData)
     {
-//        $this->setCookiesAccepted($cookiesAccepted);
-//        $this->setEmail($email);
-//        $this->setHostName($hostName);
-//        $this->setIpAddress($ipAddress);
-//        $this->setType($type);
+        $browseData = (array) $browseData;
+
+        $this->setCookiesAccepted($browseData['CookiesAccepted']);
+        //$this->setEmail($browseData['Email']);
+        //$this->setHostName($browseData['HostName']);
+        $this->setIpAddress($browseData['IpAddress']);
     }
 
     public function populate(\stdClass $data)
@@ -34,6 +35,11 @@ class Browser implements \JsonSerializable
         $this->hostName         = isset($data->hostName) ? $data->hostName : null;
         $this->ipAddress        = isset($data->ipAddress) ? $data->ipAddress : null;
         $this->type             = isset($data->type) ? $data->type : null;
+    }
+
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
     }
 
     public function setCookiesAccepted($cookiesAccepted)
