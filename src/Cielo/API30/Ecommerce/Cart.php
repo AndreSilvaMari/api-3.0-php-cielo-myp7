@@ -14,11 +14,12 @@ class Cart implements \JsonSerializable
 
     private $items;
 
-    public function __construct()
+    public function __construct($cartData)
     {
-//        $this->setIsGift($isGift);
-//        $this->setReturnsAccepted($returnsAccepted);
-//        $this->setItems($items);
+        $cartData = (array) $cartData;
+        $this->setIsGift($cartData['IsGift']);
+        $this->setReturnsAccepted($cartData['ReturnsAccepted']);
+        $this->setItems($cartData['Items']);
     }
 
     public function populate(\stdClass $data)
@@ -26,7 +27,11 @@ class Cart implements \JsonSerializable
         $this->isGift              = isset($data->isGift) ? $data->isGift : null;
         $this->returnsAccepted     = isset($data->returnsAccepted) ? $data->returnsAccepted : null;
         $this->items               = isset($data->items) ? $data->items : null;
+    }
 
+    public function jsonSerialize()
+    {
+        return get_object_vars($this);
     }
 
     public function setIsGift($isGift)
