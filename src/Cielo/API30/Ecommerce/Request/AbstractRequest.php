@@ -100,6 +100,7 @@ abstract class AbstractRequest
      */
     protected function readResponse($statusCode, $responseBody)
     {
+        $responseBody = @gzdecode($responseBody) ? @gzdecode($responseBody) : $responseBody;
         $unserialized = null;
 
         switch ($statusCode) {
